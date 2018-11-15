@@ -1,0 +1,509 @@
+
+@import "base.scss";
+@import "colors.scss";
+@import "reset.scss";
+
+
+
+body{
+    background: $primary;
+    font-family: $font;
+
+    header{
+        min-width: 100%;
+        min-height: $unit * 14.2;
+        position: fixed;
+        z-index: 2;
+        
+        .logo{
+            background-color: $orange;
+            height: $unit * 7;
+            margin: $center;
+     
+            figure{
+                background: url(../images/logo.png) no-repeat 0 0;
+                margin: $center;
+                height: $unit * 6.3;
+                width: $unit * 9;
+            }
+        }
+
+        .slogan{
+            background: $primary;
+            color: $secondary;
+            height: $unit * 3;
+            line-height: $unit * 3;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        nav{
+            background-color: $secondary;
+            height: $unit * 4.2;
+
+            ul{
+                margin: auto;
+                width: $unit * 40.2;
+              
+                li{
+                    background: $secondary;
+                    border-left: 0.1px solid $orange;
+                    float: left;
+                    list-style: none;
+                    height: $unit * 4.2;
+                    text-align: center;
+                    width: $unit * 10;
+
+                    &:nth-of-type(4){
+                        border-right: 0.1px solid $orange;
+                    }
+
+                    a{
+                        color: $primary;
+                        display: block;
+                        font-size: 10pt;
+                        line-height: $unit * 4.2;
+                        position: relative;
+                        text-decoration: none;
+                        text-transform: capitalize;
+                        transition: 80ms ease-in;
+                        z-index: 1;
+
+                        &:hover{
+                            color: $secondary;
+                            &:before{
+                                top:0;
+                            }
+                        }
+
+                        &:before {
+                            content: "";
+                            background: $primary;
+                            bottom: 0;
+                            left: 0;
+                            opacity: .7;
+                            position: absolute;
+                            right: 0;
+                            top: 100%;
+                            z-index: -1;
+                            -webkit-transition: top 0.09s ease-in;
+                        }   
+                    }
+                }
+            }
+        }
+    }
+
+
+    .video{
+        padding-top: $unit * 16;
+        max-width: 100%;
+        
+
+        video#bgvideo{
+            background-size: cover;
+            top: 0;
+            height: auto;
+            min-height: 100%;
+            min-width: 100%;
+            position: fixed;
+            right: 0;
+            width: auto;
+            z-index: -1;
+        }
+    
+        .logoimg{
+            background: url(../images/puma.svg) no-repeat;
+            background-size: cover;
+            margin: $unit $center 0 $center;
+            height: $unit * 5;
+            width: $unit * 9;
+            z-index: 1;
+        }
+
+        hr{
+            border: 0.1px solid $orange;
+            background: $orange;
+            text-decoration: $ans;
+            height: $unit * 0.6;
+            width: $unit * 4;
+        }
+
+        h2{
+            color: $secondary;
+            font-size: 16pt;
+            font-weight: 700;
+            margin-top: $unit * 2;
+            text-align: center;
+            text-transform: capitalize;
+            text-shadow: 1px 1px $primary;
+        }
+
+        .buttonsee{
+            border: 2px solid $orange;
+            border-radius: $unit;
+            color: $orange;
+            display: block;
+            height: $unit * 2;
+            margin: 20px $center;
+            padding: $unit;
+            position: relative;
+            text-align: center;
+            text-decoration: $ans;
+            transition: 80ms ease-in;
+            width: $unit * 10;
+            z-index: 1;
+
+            &:hover{ 
+                color: $secondary;
+                &:before{
+                    top: 0;
+                }
+            }
+
+            &:before {
+                content: "";
+                background: $orange;
+                bottom: 0;
+                border-radius: $unit / 2;
+                left: 0;
+                opacity: .7;
+                position: absolute;
+                right: 0;
+                top: 100%;
+                z-index: -1;
+                -webkit-transition: top 0.09s ease-in;
+            }   
+        }
+    }
+
+    .compo{
+        height: $unit * 25;
+        margin: 100px $center 0 $center;
+        max-width: $unit * 75.8;
+
+        article{
+            float: left;
+            height: 100%;
+            max-height: 250px;
+            transition: 700ms;
+            width: 50%;
+        }
+
+        .imgheadone{
+            background: url(../images/air_max.jpg) no-repeat;
+            
+            &:hover{
+                background: $primary;
+                transform: rotateY(180deg);
+                &:after {
+                
+                    visibility: visible;
+                    
+                }
+            }
+
+            &:after{
+                visibility: hidden;
+                content:"after";
+                display: inline-block;
+                background: $primary;
+                color: $secondary;
+                text-align: center;
+                transform: rotateY(180deg);
+            }
+        }
+
+
+        .imgheadtwo{
+            background: url(../images/nixon.jpg) no-repeat;
+
+            &:hover{
+                background: $primary;
+                transform: rotateX(180deg);
+                &:after {
+                    visibility: visible;  
+                }
+            }
+
+            &:after{
+                visibility: hidden;
+                content: "after";
+                display: inline-block;
+                background: $primary;
+                color: $secondary;
+                margin: auto;
+                perspective: 1200px;
+                text-align: center;
+                transform: rotateX(180deg);
+            }
+        }
+        
+    }
+
+
+    main{
+        background: rgba(0,0,0,.8);
+        margin: $center;
+        padding: $unit * 4;  
+        max-width: 100%;
+        z-index: 2;
+
+        .intro{
+            margin: $center;
+            text-align: center;
+            width: $unit * 75.8;
+
+            h3{
+                color: red;
+                font-size: 16pt;
+                letter-spacing: 2pt;
+                margin-top: $unit * 4;
+                text-transform: capitalize;
+            }
+            p{
+                color: $secondary;
+                margin-top: $unit;
+                font-size: 10pt;
+            }
+        }
+
+        #content{
+            margin: $center;
+            width: 90%;
+
+            .grid-container {
+                background: $secondary;
+                display: grid;
+                max-width: 100%;
+                
+                margin-top: $unit * 2;
+                grid-template-columns: repeat(8,130px);
+                grid-template-rows: repeat(4,130px);
+                grid-template-areas: "one one two three six seven ten ten" "one one four five eight nine ten ten" "eleven eleven twelve thirteen sixteen seventeen twenty twenty" "eleven eleven fourteen fifteen eighteen nineteen twenty twenty";
+                
+                .txt{
+                    background: $secondary;
+                    border-radius: $unit / 2;
+                    font-size: 10pt;
+                    padding: 50px 5px 0 5px;
+                    text-align: center;
+                }
+    
+    
+                .one { 
+                    background: url(../images/kany_west.jpg) no-repeat;
+                    background-size: cover;
+                    grid-area: one; 
+                }
+                
+                .two { 
+                    grid-area: two; 
+                }
+                
+                .three { 
+                    background: url(../images/femme.jpg) no-repeat;
+                    grid-area: three; }
+                
+                .four { 
+                    background: url(../images/artist.jpg) no-repeat;
+                    grid-area: four; }
+                
+                .five { 
+                    grid-area: five; }
+                
+                .six { 
+                    grid-area: six; }
+                
+                .seven { 
+                    background: url(../images/coca.jpg) no-repeat;
+                    grid-area: seven; }
+                
+                .eight { 
+                    background: url(../images/assis.jpg) no-repeat;
+                    grid-area: eight; }
+                
+                .nine { 
+                    grid-area: nine; }
+                
+                .ten { 
+                    background: url(../images/tag.gif) no-repeat;
+                    background-size: cover;
+                    grid-area: ten; }
+                
+                .eleven { 
+                    background: url(../images/star.gif) no-repeat;
+                    background-size: cover;
+                    grid-area: eleven; }
+                
+                .twelve { 
+                    grid-area: twelve; }
+                
+                .thirteen { 
+                    background: url(../images/dent.jpg) no-repeat;
+                    grid-area: thirteen; }
+                
+                .fourteen { 
+                    background: url(../images/tatoo.jpg) no-repeat;
+                    grid-area: fourteen; }
+                
+                .fifteen { 
+                    grid-area: fifteen; }
+                
+                .sixteen { 
+                    grid-area: sixteen; }
+                
+                .seventeen { 
+                    background: url(../images/stan.jpg) no-repeat;
+                    grid-area: seventeen; }
+                
+                .eighteen { 
+                    background: url(../images/nike.gif) no-repeat;
+                    grid-area: eighteen; }
+                
+                .nineteen { 
+                    grid-area: nineteen; }
+                
+                .twenty { 
+                    background: url(../images/ball.jpg) no-repeat;
+                    background-size: cover;
+                    grid-area: twenty; }
+    
+                .img{
+                    border-radius: $unit / 2;
+                    background-size: cover;
+                }   
+
+            }
+             
+        }
+            
+        .buttonread{
+            border: 1px solid $secondary;
+            border-radius: $unit / 8;
+            color: $secondary;
+            display: block;
+            height: $unit * 2;
+            margin: 20px $center 0 $center;
+            padding: $unit;
+            position: relative;
+            text-align: center;
+            text-decoration: $ans;
+            transition: 80ms ease-in;
+            width: $unit * 10;
+            z-index: 1;
+
+            &:hover{ 
+                color: $primary;
+                &:before{
+                    top: 0;
+                }
+            }
+
+            &:before {
+                content: "";
+                background: $secondary;
+                bottom: 0;
+                border-radius: $unit / 8;
+                left: 0;
+                
+                position: absolute;
+                right: 0;
+                top: 100%;
+                z-index: -1;
+                -webkit-transition: top 0.09s ease-in;
+            }   
+        }  
+        
+        
+    }
+
+
+    .logos{
+        background: url(../images/partenaires.gif);
+        height: $unit * 16;
+        min-width: 100%;
+    }
+
+    
+    footer{
+        background: rgba(0,0,0,.8);
+        min-width: 100%;
+        position: relative;
+
+        .arrow{
+            background: $orange;
+            height: $unit * 2.5;
+            left: 50%;
+            position: absolute;
+            top: -$unit * 1.3;
+            transition: 500ms ease;
+            width: $unit * 2.5;
+
+            &:hover{
+                transform: rotate(45deg);
+                &:before{
+                    opacity: 1;
+                }
+            }
+
+            &:before{
+                display: inline-block;
+                content:"▲";
+                color: $secondary;
+                line-height: $unit * 2;
+                opacity: 0;
+                margin-left: 4px;
+                margin-top: 2px;
+                transition: 600ms ease-in;
+                transform: rotate(-45deg);
+            }
+        }
+
+        nav{
+            padding-top: $unit * 3;
+            ul{
+  
+                margin: $center;
+                width: $unit * 70;
+                li{
+                    display: inline-block;
+                    height: $unit * 10;
+                    text-align: center;
+                    width: $unit * 6;
+                    
+
+                    a{
+                        color: $secondary;
+                        display: block;
+                        font-size: 6pt;
+                        line-height: $unit * 4.2;
+                        position: relative;
+                        text-decoration: none;
+                        text-transform: capitalize;
+                        transition: 80ms ease-in;
+                        z-index: 1;
+
+                        &:hover{
+                            color: $orange;
+                        }
+                    }
+                }
+
+                .logofoot{
+                    background: url(../images/logo_footer.gif) no-repeat;
+                    background-size: contain;
+                    vertical-align: -60pt;
+                    width: $unit * 4;
+                }
+            }
+        }
+    }
+
+
+
+}
+
+
+
+
